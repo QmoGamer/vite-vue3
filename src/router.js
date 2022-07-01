@@ -6,6 +6,7 @@ const HelloWorld = () => import('@/components/HelloWorld')
 const routes = [
   { path: '/', name: 'home', component: Home },
   { path: '/about', name: 'about', component: About },
+  { path: '/search', name: 'search', component: () => import('@/views/TheSearch') },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: HelloWorld },
 ]
 
