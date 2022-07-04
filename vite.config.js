@@ -10,5 +10,13 @@ export default defineConfig({
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
     // 省略副檔名
     extensions: ['.js', '.vue']
-  }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `@import '@/assets/styles/variables.scss';`
+      },
+    },
+    devSourcemap: true,
+  },
 })
