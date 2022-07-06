@@ -1,22 +1,22 @@
-import { defineConfig } from 'vite'
-import { fileURLToPath, URL } from 'url'
-import vue from '@vitejs/plugin-vue'
+import {defineConfig} from 'vite';
+import {fileURLToPath, URL} from 'url';
+import vue from '@vitejs/plugin-vue';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],
   resolve: {
     // 別名
-    alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
+    alias: {'@': fileURLToPath(new URL('./src', import.meta.url))},
     // 省略副檔名
-    extensions: ['.js', '.vue']
+    extensions: ['.js', '.vue'],
   },
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@import '@/assets/styles/variables.scss';`
+        additionalData: `@use '@/assets/styles/variables.scss' as *;`,
       },
     },
     devSourcemap: true,
   },
-})
+});
