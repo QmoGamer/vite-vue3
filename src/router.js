@@ -1,12 +1,12 @@
-import {createRouter, createWebHistory} from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 const Home = () => import('@/views/TheHome');
 const About = () => import('@/views/TheAbout');
 const HelloWorld = () => import('@/components/HelloWorld');
 
 const routes = [
-  {path: '/', name: 'home', component: Home},
-  {path: '/about', name: 'about', component: About},
-  {path: '/:pathMatch(.*)*', name: 'NotFound', component: HelloWorld},
+  { path: '/', name: 'home', component: Home },
+  { path: '/about', name: 'about', component: About },
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: HelloWorld },
 ];
 
 export const router = createRouter({

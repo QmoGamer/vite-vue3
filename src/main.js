@@ -1,9 +1,12 @@
-import {createApp} from 'vue';
+import { createApp } from 'vue';
 import App from './App';
-import {router} from './router';
+import { router } from './router';
+import { axiosInstance } from '@/api/axios';
 
 import '@/assets/styles/index.css';
 import '@/assets/styles/plugin.scss';
 import '@/assets/styles/common.scss';
 
-createApp(App).use(router).mount('#app');
+const app = createApp(App).use(router);
+app.provide('$http', axiosInstance);
+app.mount('#app');
